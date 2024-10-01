@@ -1,3 +1,4 @@
+// 1. Function for scuberGreetingForFeet
 function scuberGreetingForFeet(someValue) {
   if (someValue <= 400) {
     return "This one is on me!";
@@ -8,10 +9,12 @@ function scuberGreetingForFeet(someValue) {
   }
 }
 
+// 2. Function for ternaryCheckCity
 function ternaryCheckCity(city) {
   return city === "NYC" ? "Ok, sounds good." : "No go.";
 }
 
+// 3. Function for switchOnCharmFromTip
 function switchOnCharmFromTip(tip) {
   switch (tip) {
     case "generous":
