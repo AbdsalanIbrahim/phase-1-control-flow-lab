@@ -3,26 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scuber Ride App</title>
+  <title>Scuber Ride Cost Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .input-section {
+      margin-bottom: 15px;
+    }
+    label {
+      font-weight: bold;
+    }
+    button {
+      margin-top: 10px;
+      padding: 5px 10px;
+    }
+  </style>
 </head>
 <body>
 
   <h1>Scuber Ride Cost Calculator</h1>
-  <p>Open the browser console to see the function outputs.</p>
 
+  <div class="input-section">
+    <label for="rideDistance">Enter Ride Distance (in feet):</label>
+    <input type="number" id="rideDistance" placeholder="Enter distance">
+    <button onclick="calculateRideCost()">Get Ride Cost</button>
+    <p id="rideCostResult"></p>
+  </div>
+
+  <div class="input-section">
+    <label for="city">Enter City:</label>
+    <input type="text" id="city" placeholder="Enter city">
+    <button onclick="checkCity()">Check City</button>
+    <p id="cityResult"></p>
+  </div>
+
+  <div class="input-section">
+    <label for="tip">Enter Tip Amount (generous, not as generous, none):</label>
+    <input type="text" id="tip" placeholder="Enter tip level">
+    <button onclick="calculateTipResponse()">Get Tip Response</button>
+    <p id="tipResult"></p>
+  </div>
 
   <script src="index.js"></script>
-  <script>
-    console.log(scuberGreetingForFeet(199)); 
-    console.log(scuberGreetingForFeet(1500)); 
-    console.log(scuberGreetingForFeet(2501)); 
 
-    console.log(ternaryCheckCity('NYC')); 
-    console.log(ternaryCheckCity('Los Angeles')); 
-
-    console.log(switchOnCharmFromTip('generous'));
-    console.log(switchOnCharmFromTip('not as generous'));
-    console.log(switchOnCharmFromTip('none')); 
-  </script>
 </body>
 </html>
+

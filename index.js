@@ -25,9 +25,21 @@ function switchOnCharmFromTip(tip) {
   }
 }
 
-module.exports = {
-  scuberGreetingForFeet,
-  ternaryCheckCity,
-  switchOnCharmFromTip
-};
+function calculateRideCost() {
+  const rideDistance = document.getElementById('rideDistance').value;
+  const result = scuberGreetingForFeet(Number(rideDistance));
+  document.getElementById('rideCostResult').textContent = result;
+}
+
+function checkCity() {
+  const city = document.getElementById('city').value;
+  const result = ternaryCheckCity(city);
+  document.getElementById('cityResult').textContent = result;
+}
+
+function calculateTipResponse() {
+  const tip = document.getElementById('tip').value;
+  const result = switchOnCharmFromTip(tip);
+  document.getElementById('tipResult').textContent = result;
+}
 
