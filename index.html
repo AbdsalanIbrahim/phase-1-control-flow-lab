@@ -1,28 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scuber Ride App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scuber Ride Cost Calculator</title>
+    <script src="index.js" defer></script> 
 </head>
 <body>
+    <h1>Welcome to Scuber!</h1>
+    
+    <h2>Check Your Ride Cost</h2>
+    <label for="distance">Enter Distance (in feet):</label>
+    <input type="number" id="distance" placeholder="Distance in feet">
+    
+    <h2>Check Your City</h2>
+    <label for="city">Enter City:</label>
+    <input type="text" id="city" placeholder="City Name">
+    
+    <h2>Check Your Tip</h2>
+    <label for="tip">Enter Tip Amount:</label>
+    <input type="number" id="tip" placeholder="Tip Amount">
+    
+    <button id="calculate">Calculate</button>
+    
+    <h2>Results:</h2>
+    <p id="result"></p>
 
-  <h1>Scuber Ride Cost Calculator</h1>
-  <p>Open the browser console to see the function outputs.</p>
-
-
-  <script src="index.js"></script>
-  <script>
-    console.log(scuberGreetingForFeet(199)); 
-    console.log(scuberGreetingForFeet(1500)); 
-    console.log(scuberGreetingForFeet(2501)); 
-
-    console.log(ternaryCheckCity('NYC')); 
-    console.log(ternaryCheckCity('Los Angeles')); 
-
-    console.log(switchOnCharmFromTip('generous')); 
-    console.log(switchOnCharmFromTip('not as generous')); 
-    console.log(switchOnCharmFromTip('none')); 
-  </script>
+    <script>
+        document.getElementById('calculate').addEventListener('click', function() {
+            const distance = parseInt(document.getElementById('distance').value);
+            const city = document.getElementById('city').value;
+            const tip = parseInt(document.getElementById('tip').value);
+            
+            const rideCostMessage = scuberGreetingForFeet(distance);
+            const cityMessage = ternaryCheckCity(city);
+            const tipMessage = switchOnCharmFromTip(tip);
+            
+            document.getElementById('result').innerHTML = `
+                Ride Cost: ${rideCostMessage}<br>
+                City Message: ${cityMessage}<br>
+                Tip Message: ${tipMessage}
+            `;
+        });
+    </script>
 </body>
 </html>
