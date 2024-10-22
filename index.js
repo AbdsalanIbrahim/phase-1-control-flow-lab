@@ -1,45 +1,27 @@
 function scuberGreetingForFeet(someValue) {
   if (someValue <= 400) {
-    return 'This one is on me!';
+    return "This one is on me!";
   } else if (someValue > 400 && someValue <= 2000) {
-    return 'That will be $30.';
-  } else if (someValue > 2000 && someValue <= 2500) {
-    return 'I will gladly take your thirty bucks.';
+    return "That will be twenty bucks.";
   } else {
-    return 'No can do.';
+    return "Sorry, I can’t help you with that.";
   }
 }
 
 function ternaryCheckCity(city) {
-  return city === 'NYC' ? 'Ok, sounds good.' : 'No go.';
+  return city === "NYC" ? "I love NYC!" : "Sorry, I can’t help you with that.";
 }
 
 function switchOnCharmFromTip(tip) {
-  switch (tip) {
-    case 'generous':
-      return 'Thank you so much.';
-    case 'not as generous':
-      return 'Thank you.';
+  switch (true) {
+    case tip < 20:
+      return "Thank you for your tip!";
+    case tip >= 20 && tip < 50:
+      return "Thank you so much!";
+    case tip >= 50:
+      return "Wow! Thank you!";
     default:
-      return 'Bye.';
+      return "No tip received."; 
   }
-}
-
-function calculateRideCost() {
-  const rideDistance = document.getElementById('rideDistance').value;
-  const result = scuberGreetingForFeet(Number(rideDistance));
-  document.getElementById('rideCostResult').textContent = result;
-}
-
-function checkCity() {
-  const city = document.getElementById('city').value;
-  const result = ternaryCheckCity(city);
-  document.getElementById('cityResult').textContent = result;
-}
-
-function calculateTipResponse() {
-  const tip = document.getElementById('tip').value;
-  const result = switchOnCharmFromTip(tip);
-  document.getElementById('tipResult').textContent = result;
 }
 
